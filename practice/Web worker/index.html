@@ -1,0 +1,10 @@
+<script>
+    if(window.Worker){
+        let thread1= new Worker("rev.js");
+        thread1.postMessage("HELLO");
+        thread1.onerror=function(e){
+            const{data}=e;
+            console.log(data.rev);
+        }
+    }
+</script>

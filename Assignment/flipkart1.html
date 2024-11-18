@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flipkart Layout</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas: 
+                'header header header'
+                'aside-left main aside-right'
+                'footer footer footer';
+            grid-template-columns: 1fr 3fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            height: 100vh;
+            margin: 0;
+        }
+        header {
+            grid-area: header;
+            background-color: #2874f0;
+            color: yellow;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        aside {
+            background-color: #f1f1f1;
+            height: 100%;
+        }
+        .aside-left {
+            grid-area: aside-left;
+
+        }
+        .aside-right {
+            grid-area: aside-right;
+        }
+        header img{
+            height: 40px;
+            border-radius: 85%;
+
+        }
+        main {
+            grid-area: main;
+            background-color: #ffffff;
+            padding: 10px;
+            height: 100vh;
+        }
+        footer {
+            grid-area: footer;
+            background-color: #2874f0;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><i>flipkart</i></h1>
+        <img src="user.jpeg" alt="user">
+    </header>
+    <aside class="aside-left">
+        <h2>Categories</h2>
+        <ul>
+            <li>Electronics</li>
+            <li>Fashion</li>
+            <li>Home</li>
+            <li>Appliances</li>
+        </ul>
+    </aside>
+    <main>
+        <h2>Welcome to Flipkart</h2>
+        <p>Find the best deals on your favorite products!</p>
+    </main>
+    <aside class="aside-right">
+        <h2>Offers</h2>
+        <ul>
+            <li>Discounts</li>
+            <li>Coupons</li>
+            <li>Flash Sales</li>
+        </ul>
+    </aside>
+    <footer>
+        <p>© 2024 Flipkart. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+
+
+
+<style>
+    body{
+        font-family: 'Times New Roman', Times, serif;
+        background-color: antiquewhite;
+        display: flexbox;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .login-container{
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 5px;
+
+    }
+    h2{
+        text-align: center;
+    }
+</style>

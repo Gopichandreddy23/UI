@@ -1,0 +1,49 @@
+html{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    height: 100vh;
+
+}
+.banking-grid{
+    display: grid;
+    grid-template-areas: 
+    'header'
+    'nav'
+    'main'
+    'footer';
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 1rem 1fr 5rem;
+    height: 100vh;
+}
+header{
+    grid-area:'header';
+    background-color: aqua;
+    font-size: 2rem;
+
+
+}
+nav{
+    grid-area: 'nav';
+   background: linear-gradient(45deg,red,black);
+   padding: 20px;
+   text-align: center;
+   text-decoration: none;
+
+
+}
+main{
+    grid-area: 'main';
+
+}
+footer{
+    grid-area: 'footer';
+    background-color: aqua;
+
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

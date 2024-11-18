@@ -1,0 +1,31 @@
+<script>
+    if (window.Worker) {
+        let addThread = new Worker("add.js");
+        let subThread=new Worker("sub.js");
+        let mulThread=new Worker("mul.js");
+        let divThread=new Worker("div.js");
+        addThread.postMessage({ arg1: 10, arg2: 30 });
+        addThread.onmessage = function(e) {
+            const { data } = e;
+            console.log(data.result);
+            subThread.postMessage({arg1:data.result,arg2:10});
+            subThread.onmessage=function(e){
+                const {data}=e;
+                console.log(data.subresult);
+                mulThread.postMessage({arg1:data.subresult,arg2:10});
+                mulThread.onmessage=function(e){
+                    const {data}=e;
+                    console.log(data.mulresult);
+                    divThread.postMessage({arg1:data.mulresult,arg2:10});
+                    divThread.onmessage=function(e){
+                        const{data}=e;
+                        console.log(data.divresult);
+                    }
+                }
+            }
+
+        }
+    } else {
+        console.log("Your browser does not support Web Workers.");
+    }
+</script>
